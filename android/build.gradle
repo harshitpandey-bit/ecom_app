@@ -1,0 +1,26 @@
+// Top-level build.gradle file for configuring the build system.
+
+buildscript {
+    ext.kotlin_version = '1.7.21' // Specify Kotlin version
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.1.0" // Specify the Android Gradle Plugin version
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // Other dependencies if needed
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Optional: Clean task to remove build directories
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
